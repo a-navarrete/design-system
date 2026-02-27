@@ -2,31 +2,6 @@ import { Meta, Typeset } from '@storybook/addon-docs';
 
 <Meta title="Tokens/Typography" />
 
-export const typography = {
-  type: {
-    primary: '"PP Neue York", "Inter", sans-serif',
-  },
-  weight: {
-    regular: '400',
-    medium: '500',
-    semibold: '600',
-    bold: '700',
-  },
-  size: {
-    xs: 12,
-    sm: 14,
-    base: 16,
-    lg: 18,
-    xl: 20,
-    '2xl': 24,
-    '3xl': 30,
-    '4xl': 36,
-    '5xl': 48,
-  },
-};
-
-export const SampleText = 'The quick brown fox jumps over the lazy dog';
-
 # Typography
 
 **Font:** PP Neue York / Inter
@@ -34,18 +9,8 @@ export const SampleText = 'The quick brown fox jumps over the lazy dog';
 **Weights:** 400(regular), 500(medium), 600(semibold), 700(bold)
 
 <Typeset
-  fontSizes={[
-    typography.size.xs,
-    typography.size.sm,
-    typography.size.base,
-    typography.size.lg,
-    typography.size.xl,
-    typography.size.2xl,
-    typography.size.3xl,
-    typography.size.4xl,
-    typography.size.5xl,
-  ]}
-  fontWeight={typography.weight.regular}
-  sampleText={SampleText}
-  fontFamily={typography.type.primary}
+  fontSizes={[12, 14, 16, 18, 20, 24, 30, 36, 48]}
+  fontWeight="400"
+  sampleText="The quick brown fox jumps over the lazy dog"
+  fontFamily='"PP Neue York", "Inter", sans-serif'
 />
