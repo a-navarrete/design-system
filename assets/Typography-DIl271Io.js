@@ -1,0 +1,6 @@
+import{j as t}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as r}from"./index-D3yXdDgY.js";import"./index-CnZ6dEqD.js";import{M as s,T as i}from"./DocsRenderer-CFRXHY34-U0p34qwk.js";import"./index-CtOEgLBf.js";import"./_commonjsHelpers-CqkleIqs.js";import"./preview-B5iuQ5Dw.js";import"./iframe-R3NT5kmb.js";import"./react-18-DKfGrZ1E.js";import"./index-cS34vJOP.js";import"./index-DrFu-skq.js";function n(e){const o={h1:"h1",p:"p",strong:"strong",...r(),...e.components};return t.jsxs(t.Fragment,{children:[t.jsx(s,{title:"Tokens/Typography"}),`
+`,t.jsx(o.h1,{id:"typography-golden-ratio",children:"Typography (Golden Ratio)"}),`
+`,t.jsx(o.p,{children:"This scale uses the Golden Ratio (1.618) from a 16px base."}),`
+`,t.jsxs(o.p,{children:[t.jsx(o.strong,{children:"Font:"})," PP Neue York / Inter"]}),`
+`,t.jsxs(o.p,{children:[t.jsx(o.strong,{children:"Scale Factor:"})," 1.618"]}),`
+`,t.jsx(i,{fontSizes:[10,16,26,42,68,110],fontWeight:"400",sampleText:"The quick brown fox jumps over the lazy dog",fontFamily:'"PP Neue York", "Inter", sans-serif'})]})}function g(e={}){const{wrapper:o}={...r(),...e.components};return o?t.jsx(o,{...e,children:t.jsx(n,{...e})}):n(e)}export{g as default};
