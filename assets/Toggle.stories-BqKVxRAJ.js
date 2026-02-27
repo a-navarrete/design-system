@@ -1,0 +1,9 @@
+import{fn as f}from"./index-DgAF9SIF.js";import{j as e}from"./jsx-runtime-D_zvdyIk.js";import"./index-CtOEgLBf.js";import"./_commonjsHelpers-CqkleIqs.js";const i=({checked:g=!1,onChange:t,label:m="Toggle"})=>{const p=u=>{t==null||t(u.target.checked)};return e.jsxs("label",{className:"toggle",children:[e.jsx("input",{type:"checkbox",className:"toggle__input",checked:g,onChange:p,"aria-label":m}),e.jsx("span",{className:"toggle__slider",children:e.jsx("span",{className:"toggle__knob"})})]})};i.__docgenInfo={description:"",methods:[],displayName:"Toggle",props:{checked:{required:!1,tsType:{name:"boolean"},description:"Is the toggle switched on?",defaultValue:{value:"false",computed:!1}},onChange:{required:!1,tsType:{name:"signature",type:"function",raw:"(checked: boolean) => void",signature:{arguments:[{type:{name:"boolean"},name:"checked"}],return:{name:"void"}}},description:"Callback when the state changes"},label:{required:!1,tsType:{name:"string"},description:"Accessible label",defaultValue:{value:"'Toggle'",computed:!1}}}};const y={title:"Example/Toggle",component:i,parameters:{layout:"centered",design:{type:"figma",url:"https://www.figma.com/design/iJ8gvICLXnbsh9ple9rogK/Design-Systems?node-id=9-13&m=dev"}},tags:["autodocs"],args:{onChange:f()}},s={args:{checked:!1}},a={args:{checked:!0}};var r,o,n;s.parameters={...s.parameters,docs:{...(r=s.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  args: {
+    checked: false
+  }
+}`,...(n=(o=s.parameters)==null?void 0:o.docs)==null?void 0:n.source}}};var c,l,d;a.parameters={...a.parameters,docs:{...(c=a.parameters)==null?void 0:c.docs,source:{originalSource:`{
+  args: {
+    checked: true
+  }
+}`,...(d=(l=a.parameters)==null?void 0:l.docs)==null?void 0:d.source}}};const _=["Off","On"];export{s as Off,a as On,_ as __namedExportsOrder,y as default};
