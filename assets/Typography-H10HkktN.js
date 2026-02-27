@@ -1,0 +1,5 @@
+import{j as t}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as r}from"./index-D3yXdDgY.js";import"./index-CTSbPg4G.js";import{M as s,T as i}from"./DocsRenderer-CFRXHY34-EpC4Nw3W.js";import"./index-CtOEgLBf.js";import"./_commonjsHelpers-CqkleIqs.js";import"./preview-Cfcnf0fg.js";import"./iframe-BAsqD48b.js";import"./react-18-DKfGrZ1E.js";import"./index-cS34vJOP.js";import"./index-DrFu-skq.js";function n(e){const o={h1:"h1",p:"p",strong:"strong",...r(),...e.components};return t.jsxs(t.Fragment,{children:[t.jsx(s,{title:"Tokens/Typography"}),`
+`,t.jsx(o.h1,{id:"typography",children:"Typography"}),`
+`,t.jsxs(o.p,{children:[t.jsx(o.strong,{children:"Font:"})," PP Neue York / Inter"]}),`
+`,t.jsxs(o.p,{children:[t.jsx(o.strong,{children:"Weights:"})," 400(regular), 500(medium), 600(semibold), 700(bold)"]}),`
+`,t.jsx(i,{fontSizes:[12,14,16,18,20,24,30,36,48],fontWeight:"400",sampleText:"The quick brown fox jumps over the lazy dog",fontFamily:'"PP Neue York", "Inter", sans-serif'})]})}function f(e={}){const{wrapper:o}={...r(),...e.components};return o?t.jsx(o,{...e,children:t.jsx(n,{...e})}):n(e)}export{f as default};
