@@ -39,16 +39,16 @@
   --font-family-primary: 'PP Neue York', 'Inter', system-ui, sans-serif;
   --font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 
-  /* Typography - Font Sizes */
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
+  /* Typography - Font Sizes (Modular Scale: 1.618 Golden Ratio) */
+  --font-size-xs: 0.618rem;   /* ~10px */
+  --font-size-sm: 0.8rem;     /* ~13px - intermediate step for usability */
   --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
-  --font-size-xl: 1.25rem;    /* 20px */
-  --font-size-2xl: 1.5rem;    /* 24px */
-  --font-size-3xl: 1.875rem;  /* 30px */
-  --font-size-4xl: 2.25rem;   /* 36px */
-  --font-size-5xl: 3rem;      /* 48px */
+  --font-size-lg: 1.618rem;   /* ~26px */
+  --font-size-xl: 2.618rem;   /* ~42px */
+  --font-size-2xl: 4.236rem;  /* ~68px */
+  --font-size-3xl: 6.854rem;  /* ~110px */
+  --font-size-4xl: 11.089rem; /* ~177px */
+  --font-size-5xl: 17.942rem; /* ~287px */
 
   /* Typography - Font Weights */
   --font-weight-normal: 400;
