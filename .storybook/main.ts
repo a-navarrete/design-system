@@ -11,6 +11,12 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-designs"
   ],
-  "framework": "@storybook/react-vite"
+  "framework": "@storybook/react-vite",
+  async viteFinal(config, { configType }) {
+    if (configType === 'PRODUCTION') {
+      config.base = '/design-system/';
+    }
+    return config;
+  },
 };
 export default config;
