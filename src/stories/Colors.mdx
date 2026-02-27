@@ -1,0 +1,70 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+
+<Meta title="Tokens/Colors" />
+
+# Colors
+This palette defines the color scale for our design system. These are available as CSS variables.
+
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    subtitle="Main brand color scale"
+    colors={{
+      50: '#f0f0ff',
+      100: '#e0e0ff',
+      200: '#c1c1ff',
+      300: '#a1a1ff',
+      400: '#6262ff',
+      500: '#1a00ff',
+      600: '#1500cc',
+      700: '#0f0099',
+      800: '#0a0066',
+      900: '#050033',
+    }}
+  />
+  <ColorItem
+    title="Neutral"
+    subtitle="Grays for text, borders, and backgrounds"
+    colors={{
+      White: '#ffffff',
+      50: '#f9fafb',
+      100: '#f3f4f6',
+      200: '#e5e7eb',
+      300: '#d1d5db',
+      400: '#9ca3af',
+      500: '#6b7280',
+      600: '#4b5563',
+      700: '#374151',
+      800: '#1f2937',
+      900: '#111827',
+      Black: '#000000',
+    }}
+  />
+  <ColorItem
+    title="Success"
+    subtitle="Positive semantic states"
+    colors={{
+      50: '#f0fdf4',
+      500: '#22c55e',
+      700: '#15803d',
+    }}
+  />
+  <ColorItem
+    title="Warning"
+    subtitle="Alert semantic states"
+    colors={{
+      50: '#fffbeb',
+      500: '#f59e0b',
+      700: '#b45309',
+    }}
+  />
+  <ColorItem
+    title="Error"
+    subtitle="Danger semantic states"
+    colors={{
+      50: '#fef2f2',
+      500: '#ef4444',
+      700: '#b91c1c',
+    }}
+  />
+</ColorPalette>

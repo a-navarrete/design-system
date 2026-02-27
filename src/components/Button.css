@@ -1,0 +1,36 @@
+@import '../tokens.css';
+
+.button {
+  font-family: 'PP Neue York', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  border: 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  line-height: normal;
+  white-space: nowrap;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.button--primary {
+  color: var(--color-neutral-0);
+  background-color: var(--color-primary-500);
+}
+
+.button--primary:hover {
+  background-color: var(--color-primary-600);
+}
+
+.button--secondary {
+  color: var(--color-primary-500);
+  background-color: transparent;
+  box-shadow: var(--color-primary-500) 0px 0px 0px 1px inset;
+}
+
+.button--secondary:hover {
+  background-color: var(--color-primary-50);
+}

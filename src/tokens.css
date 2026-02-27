@@ -1,0 +1,51 @@
+:root {
+  /* Primary Scale - #1a00ff */
+  --color-primary-50: #f0f0ff;
+  --color-primary-100: #e0e0ff;
+  --color-primary-200: #c1c1ff;
+  --color-primary-300: #a1a1ff;
+  --color-primary-400: #6262ff;
+  --color-primary-500: #1a00ff; /* Brand Color */
+  --color-primary-600: #1500cc;
+  --color-primary-700: #0f0099;
+  --color-primary-800: #0a0066;
+  --color-primary-900: #050033;
+
+  /* Neutral Scale */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+  --color-neutral-1000: #000000;
+
+  /* Semantic - Success */
+  --color-success-50: #f0fdf4;
+  --color-success-500: #22c55e;
+  --color-success-700: #15803d;
+
+  /* Semantic - Warning */
+  --color-warning-50: #fffbeb;
+  --color-warning-500: #f59e0b;
+  --color-warning-700: #b45309;
+
+  /* Semantic - Error */
+  --color-error-50: #fef2f2;
+  --color-error-500: #ef4444;
+  --color-error-700: #b91c1c;
+
+  /* Surface / Backgrounds */
+  --color-surface: var(--color-neutral-0);
+  --color-background: var(--color-neutral-50);
+
+  /* Typography */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-text-inverse: var(--color-neutral-0);
+}
