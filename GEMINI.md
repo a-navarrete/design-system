@@ -16,8 +16,14 @@
 - **URL Management**: Always verify node IDs and file keys before updating the mapping URLs.
 
 ## Build & Validation
-- **Pre-commit Check**: Always run the following commands to validate changes before pushing:
-  - `npm run build-storybook`: Ensures documentation and components build correctly (crucial for catching MDX/Story errors).
-  - `npm run build`: Ensures the core React project and TypeScript types are valid.
-  - `npm run lint`: Checks for code quality and style violations.
-- **Error Handling**: If a build fails, resolve the specific error in the console output before attempting to restart the dev server. Do not attempt to "force" installs if a build failure is due to code syntax or logic errors.
+Follow these commands strictly to validate changes:
+- **Build**: `npm run build`
+- **Storybook Build**: `npm run build-storybook`
+- **Lint**: `npm run lint`
+- **Testing**: `npx vitest --run` (Once configured)
+
+### Validation Workflow
+1. **Always** run `npm run lint` and `npm run build` after any logic or component change.
+2. **Always** run `npm run build-storybook` after modifying `.mdx` or `.stories.ts` files to catch indexing errors.
+3. **Never** assume a change is correct based only on dev-server hot reloading.
+4. If a build command fails, **stop** and resolve the specific error before attempting further changes or installs.
