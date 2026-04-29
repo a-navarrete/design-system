@@ -11,19 +11,18 @@
   --color-primary-800: #0a0066;
   --color-primary-900: #050033;
 
-  /* Neutral Scale */
-  --color-neutral-0: #ffffff;
-  --color-neutral-50: #f9fafb;
-  --color-neutral-100: #f3f4f6;
-  --color-neutral-200: #e5e7eb;
-  --color-neutral-300: #d1d5db;
-  --color-neutral-400: #9ca3af;
-  --color-neutral-500: #6b7280;
-  --color-neutral-600: #4b5563;
-  --color-neutral-700: #374151;
-  --color-neutral-800: #1f2937;
-  --color-neutral-900: #111827;
-  --color-neutral-1000: #000000;
+  /* Grey Scale (NBC) — mirrors Figma color/grey/0..1000 */
+  --color-grey-0: #ffffff;
+  --color-grey-100: #f4f5f6;
+  --color-grey-200: #e6e7e8;
+  --color-grey-300: #d6d7d8;
+  --color-grey-400: #b6b7b8;
+  --color-grey-500: #999a9a;
+  --color-grey-600: #64686d;
+  --color-grey-700: #31363d;
+  --color-grey-800: #24282d;
+  --color-grey-900: #181a1e;
+  --color-grey-1000: #090a0b;
 
   /* Semantic - Success */
   --color-success-50: #f0fdf4;
@@ -36,11 +35,11 @@
   --color-warning-700: #b45309;
 
   /* Surface / Backgrounds */
-  --color-surface: var(--color-neutral-0);
-  --color-background: var(--color-neutral-50);
+  --color-surface: var(--color-grey-0);
+  --color-background: var(--color-grey-100);
 
   /* Text */
-  --color-text-primary: var(--color-neutral-900);
-  --color-text-secondary: var(--color-neutral-500);
-  --color-text-inverse: var(--color-neutral-0);
+  --color-text-primary: var(--color-grey-900);
+  --color-text-secondary: var(--color-grey-600);
+  --color-text-inverse: var(--color-grey-0);
 }
