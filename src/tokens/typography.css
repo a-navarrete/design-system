@@ -1,0 +1,28 @@
+:root {
+  /* Typography - Font Families */
+  --font-family-primary: 'PP Neue York', 'Inter', system-ui, sans-serif;
+  --font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  /* Typography - Font Sizes (Modular Scale: 1.618 Golden Ratio) */
+  --font-size-xs: 0.618rem;   /* ~10px */
+  --font-size-sm: 0.8rem;     /* ~13px - intermediate step for usability */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.618rem;   /* ~26px */
+  --font-size-xl: 2.618rem;   /* ~42px */
+  --font-size-2xl: 4.236rem;  /* ~68px */
+  --font-size-3xl: 6.854rem;  /* ~110px */
+  --font-size-4xl: 11.089rem; /* ~177px */
+  --font-size-5xl: 17.942rem; /* ~287px */
+
+  /* Typography - Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Typography - Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+}
