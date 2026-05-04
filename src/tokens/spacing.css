@@ -1,14 +1,26 @@
 :root {
-  /* Spacing Scale (8pt grid) */
-  --spacing-0: 0;
-  --spacing-1: 0.25rem; /* 4px */
-  --spacing-2: 0.5rem;  /* 8px */
-  --spacing-3: 0.75rem; /* 12px */
-  --spacing-4: 1rem;    /* 16px */
-  --spacing-5: 1.25rem; /* 20px */
-  --spacing-6: 1.5rem;  /* 24px */
-  --spacing-8: 2rem;    /* 32px */
-  --spacing-10: 2.5rem; /* 40px */
-  --spacing-12: 3rem;   /* 48px */
-  --spacing-16: 4rem;   /* 64px */
+  /* Spacing Scale — 4-point grid, pixel-numbered to match Figma `space/*` */
+  --spacing-0:  0;
+  --spacing-2:  0.125rem;  /* 2 — hairlines, tight optical adjustments */
+  --spacing-4:  0.25rem;   /* 4 */
+  --spacing-8:  0.5rem;    /* 8 */
+  --spacing-12: 0.75rem;   /* 12 */
+  --spacing-16: 1rem;      /* 16 */
+  --spacing-20: 1.25rem;   /* 20 */
+  --spacing-24: 1.5rem;    /* 24 */
+  --spacing-32: 2rem;      /* 32 */
+  --spacing-40: 2.5rem;    /* 40 */
+  --spacing-48: 3rem;      /* 48 */
+  --spacing-64: 4rem;      /* 64 */
+
+  /* Semantic roles — the contract Figma `gap/*` and `padding/*` aliases mirror */
+  --gap-xs:  var(--spacing-8);
+  --gap-sm:  var(--spacing-12);
+  --gap-md:  var(--spacing-16);
+  --gap-lg:  var(--spacing-24);
+  --gap-xl:  var(--spacing-32);
+
+  --padding-sm: var(--spacing-12);
+  --padding-md: var(--spacing-16);
+  --padding-lg: var(--spacing-24);
 }
