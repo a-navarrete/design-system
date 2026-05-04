@@ -3,35 +3,42 @@ import { Meta } from '@storybook/addon-docs';
 <Meta title="Tokens/Spacing" />
 
 # Spacing
-We use an 8pt grid system for consistent spacing. These variables should be used for margins, padding, and gaps.
 
-<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px' }}>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-    <div style={{ width: '100px', fontSize: '12px', color: '#666' }}><strong>spacing-1</strong><br/>4px</div>
-    <div style={{ height: '24px', width: 'var(--spacing-1)', backgroundColor: '#1a00ff', borderRadius: '2px' }} />
-  </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-    <div style={{ width: '100px', fontSize: '12px', color: '#666' }}><strong>spacing-2</strong><br/>8px</div>
-    <div style={{ height: '24px', width: 'var(--spacing-2)', backgroundColor: '#1a00ff', borderRadius: '2px' }} />
-  </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-    <div style={{ width: '100px', fontSize: '12px', color: '#666' }}><strong>spacing-3</strong><br/>12px</div>
-    <div style={{ height: '24px', width: 'var(--spacing-3)', backgroundColor: '#1a00ff', borderRadius: '2px' }} />
-  </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-    <div style={{ width: '100px', fontSize: '12px', color: '#666' }}><strong>spacing-4</strong><br/>16px</div>
-    <div style={{ height: '24px', width: 'var(--spacing-4)', backgroundColor: '#1a00ff', borderRadius: '2px' }} />
-  </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-    <div style={{ width: '100px', fontSize: '12px', color: '#666' }}><strong>spacing-6</strong><br/>24px</div>
-    <div style={{ height: '24px', width: 'var(--spacing-6)', backgroundColor: '#1a00ff', borderRadius: '2px' }} />
-  </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-    <div style={{ width: '100px', fontSize: '12px', color: '#666' }}><strong>spacing-8</strong><br/>32px</div>
-    <div style={{ height: '24px', width: 'var(--spacing-8)', backgroundColor: '#1a00ff', borderRadius: '2px' }} />
-  </div>
-  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-    <div style={{ width: '100px', fontSize: '12px', color: '#666' }}><strong>spacing-12</strong><br/>48px</div>
-    <div style={{ height: '24px', width: 'var(--spacing-12)', backgroundColor: '#1a00ff', borderRadius: '2px' }} />
-  </div>
+12 stops on a 4-point grid, pixel-numbered. Names mirror Figma's `space/*` variables — `var(--spacing-16)` is 16px both places.
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '24px' }}>
+  {[
+    { name: 'spacing-0',  px: 0  },
+    { name: 'spacing-2',  px: 2  },
+    { name: 'spacing-4',  px: 4  },
+    { name: 'spacing-8',  px: 8  },
+    { name: 'spacing-12', px: 12 },
+    { name: 'spacing-16', px: 16 },
+    { name: 'spacing-20', px: 20 },
+    { name: 'spacing-24', px: 24 },
+    { name: 'spacing-32', px: 32 },
+    { name: 'spacing-40', px: 40 },
+    { name: 'spacing-48', px: 48 },
+    { name: 'spacing-64', px: 64 },
+  ].map(({ name, px }) => (
+    <div key={name} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <div style={{ width: '120px', fontFamily: 'JetBrains Mono, monospace', fontSize: '12px', color: '#64686d' }}>
+        <strong style={{ color: '#181a1e' }}>{name}</strong><br />{px}px
+      </div>
+      <div style={{ height: '24px', width: `${px}px`, backgroundColor: '#1a00ff', borderRadius: '2px' }} />
+    </div>
+  ))}
 </div>
+
+## Semantic roles
+
+| Role | Token | Pixels | Use |
+|---|---|---|---|
+| Gap XS | `--gap-xs` | 8 | Inline-tight rows |
+| Gap SM | `--gap-sm` | 12 | Compact stacks |
+| Gap MD | `--gap-md` | 16 | Default stacks |
+| Gap LG | `--gap-lg` | 24 | Section breaks |
+| Gap XL | `--gap-xl` | 32 | Page-level rhythm |
+| Padding SM | `--padding-sm` | 12 | Compact components |
+| Padding MD | `--padding-md` | 16 | Default components |
+| Padding LG | `--padding-lg` | 24 | Cards, dialogs |
