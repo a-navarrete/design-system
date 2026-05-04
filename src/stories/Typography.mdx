@@ -2,16 +2,32 @@ import { Meta, Typeset } from '@storybook/addon-docs';
 
 <Meta title="Tokens/Typography" />
 
-# Typography (Golden Ratio)
-This scale uses the Golden Ratio (1.618) from a 16px base.
+# Typography
 
-**Font:** PP Neue York / Inter
+Practical UI ramp, predominantly 4-point. The one exception is **14** — UI body-small is too load-bearing to skip.
 
-**Scale Factor:** 1.618
+**Font:** Arthouse Owned (brand) → Inter → Helvetica → system fallback.
 
 <Typeset
-  fontSizes={[10, 16, 26, 42, 68, 110]}
+  fontSizes={[12, 14, 16, 20, 24, 32, 40, 48, 64, 80]}
   fontWeight="400"
   sampleText="The quick brown fox jumps over the lazy dog"
-  fontFamily='"PP Neue York", "Inter", sans-serif'
+  fontFamily='"Arthouse Owned", "Inter", "Helvetica", sans-serif'
 />
+
+## Semantic roles
+
+| Role | Size | Line | Weight | Use |
+|---|---|---|---|---|
+| Caption | 12 | 16 | Regular | Badges, labels |
+| Body Small | 14 | 20 | Regular | Secondary, dense UI |
+| Body | 16 | 24 | Regular | Default body |
+| Body Large | 20 | 28 | Regular | Lead paragraphs |
+| Heading Small | 24 | 32 | Semi Bold | Subsection headings |
+| Heading Medium | 32 | 40 | Bold | Section headings |
+| Heading Large | 40 | 48 | Bold | Card titles / page sub |
+| Display Small | 48 | 56 | Bold | Display |
+| Display Medium | 64 | 72 | Black | Hero |
+| Display Large | 80 | 88 | Black | Major hero |
+
+Display sizes use tight letter-spacing (-0.02em). Body and small sizes use normal tracking.
