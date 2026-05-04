@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Tokens/Elevation" />
+
+# Elevation
+
+3 levels mirroring Figma's `elevation/sm`, `elevation/md`, `elevation/lg` effect styles. Shadows are stored as composed `box-shadow` values rather than decomposed primitives — shadows don't compose from atoms the way color and spacing do, so each token is the complete shadow.
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '48px', padding: '48px', backgroundColor: '#f4f5f6' }}>
+  {[
+    { name: 'elevation-sm', shadow: '0 1px 3px rgba(0, 0, 0, 0.08)',  use: 'Cards, list items' },
+    { name: 'elevation-md', shadow: '0 4px 12px rgba(0, 0, 0, 0.12)', use: 'Popovers, dropdowns, tooltips' },
+    { name: 'elevation-lg', shadow: '0 8px 24px rgba(0, 0, 0, 0.16)', use: 'Modals, sheets' },
+  ].map(({ name, shadow, use }) => (
+    <div key={name} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div style={{
+        height: '160px',
+        backgroundColor: '#ffffff',
+        borderRadius: '8px',
+        boxShadow: shadow,
+      }} />
+      <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '12px' }}>
+        <strong style={{ color: '#181a1e' }}>{name}</strong>
+      </div>
+      <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '12px', color: '#64686d' }}>
+        {shadow}
+      </div>
+      <div style={{ fontFamily: 'Arthouse Owned, Inter, Helvetica, sans-serif', fontSize: '14px', color: '#64686d' }}>
+        {use}
+      </div>
+    </div>
+  ))}
+</div>
+
+## Semantic roles
+
+| Role | Token | Use |
+|---|---|---|
+| Card | `--elevation-card` | Cards, list items |
+| Popover | `--elevation-popover` | Dropdowns, tooltips, popovers |
+| Modal | `--elevation-modal` | Modals, sheets, dialogs |
+
+## Why composed values?
+
+Color tokens decompose nicely (`color/grey/100` is a primitive that semantic roles reference). Spacing decomposes (4-point grid → semantic gaps). Shadows don't — `0 4px 12px rgba(0,0,0,0.12)` is a single optical decision; you can't usefully separate "the offset primitive" from "the blur primitive" because changing one breaks the look. So each elevation token is whole.
