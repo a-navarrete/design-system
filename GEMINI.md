@@ -3,7 +3,7 @@
 ## Storybook & Dependencies
 - **Version Stability**: Maintain Storybook and all `@storybook/*` packages at version `8.x` (currently `8.6.15`). Avoid upgrading to `v10.x` or mixing major versions, as this causes peer dependency deadlocks with Vite and React.
 - **Package Consistency**: When installing new Storybook addons or utilities, always specify the current project version (e.g., `npm install @storybook/addon-name@8.6.15`).
-- **Peer Dependencies**: Always use the `--legacy-peer-deps` flag when installing Storybook-related packages to prevent NPM from failing on transient version mismatches.
+- **Peer dependencies — do NOT use `--legacy-peer-deps`.** It bypasses npm's resolver entirely, leaves transitive deps mismatched (esbuild-register version drift, missing platform Rollup binaries, missing transitive packages like `polished` / `lit-html`), and produces cascading errors that look like Storybook bugs but aren't. If a peer-dep conflict surfaces, fix it at the source: bump the conflicting `^x.y.z` constraint in `package.json` to a version whose peer ranges actually match what's in the tree, then run a clean `rm -rf node_modules package-lock.json && npm install`.
 - **Addons**: Do not reinstall `@storybook/addon-vitest` or `@chromatic-com/storybook` without verifying compatibility with the existing v8 core.
 
 ## Configuration
