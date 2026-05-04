@@ -1,3 +1,16 @@
 :root {
-  /* Radius tokens land here in Phase 5 */
+  /* Radius Scale — t-shirt sized, mirrors Figma `radius/*` */
+  --radius-none: 0;
+  --radius-xs:   0.125rem;  /* 2 */
+  --radius-sm:   0.25rem;   /* 4 */
+  --radius-md:   0.5rem;    /* 8 */
+  --radius-lg:   0.75rem;   /* 12 */
+  --radius-xl:   1rem;      /* 16 */
+  --radius-2xl:  1.5rem;    /* 24 */
+  --radius-full: 9999px;    /* pill / circle */
+
+  /* Semantic roles — what components reach for, not the raw scale */
+  --radius-card:    var(--radius-sm);
+  --radius-control: var(--radius-md);
+  --radius-pill:    var(--radius-full);
 }
