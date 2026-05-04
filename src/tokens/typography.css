@@ -1,28 +1,88 @@
 :root {
-  /* Typography - Font Families */
-  --font-family-primary: 'PP Neue York', 'Inter', system-ui, sans-serif;
-  --font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  /* Font Families */
+  --font-family-primary: 'Arthouse Owned', 'Inter', 'Helvetica', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, Menlo, monospace;
 
-  /* Typography - Font Sizes (Modular Scale: 1.618 Golden Ratio) */
-  --font-size-xs: 0.618rem;   /* ~10px */
-  --font-size-sm: 0.8rem;     /* ~13px - intermediate step for usability */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.618rem;   /* ~26px */
-  --font-size-xl: 2.618rem;   /* ~42px */
-  --font-size-2xl: 4.236rem;  /* ~68px */
-  --font-size-3xl: 6.854rem;  /* ~110px */
-  --font-size-4xl: 11.089rem; /* ~177px */
-  --font-size-5xl: 17.942rem; /* ~287px */
+  /* Font Sizes — practical UI ramp, predominantly 4-point.
+     14 is the one exception; UI body-small at 14 is too load-bearing to skip. */
+  --font-size-12: 0.75rem;   /* 12 */
+  --font-size-14: 0.875rem;  /* 14 */
+  --font-size-16: 1rem;      /* 16 */
+  --font-size-20: 1.25rem;   /* 20 */
+  --font-size-24: 1.5rem;    /* 24 */
+  --font-size-32: 2rem;      /* 32 */
+  --font-size-40: 2.5rem;    /* 40 */
+  --font-size-48: 3rem;      /* 48 */
+  --font-size-64: 4rem;      /* 64 */
+  --font-size-80: 5rem;      /* 80 */
 
-  /* Typography - Font Weights */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
+  /* Font Weights */
+  --font-weight-regular:  400;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --font-weight-bold:     700;
+  --font-weight-black:    900;
 
-  /* Typography - Line Heights */
-  --line-height-none: 1;
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.625;
+  /* Line Heights — pinned to a 4-point vertical rhythm */
+  --line-height-16: 1rem;     /* 16 */
+  --line-height-20: 1.25rem;  /* 20 */
+  --line-height-24: 1.5rem;   /* 24 */
+  --line-height-28: 1.75rem;  /* 28 */
+  --line-height-32: 2rem;     /* 32 */
+  --line-height-40: 2.5rem;   /* 40 */
+  --line-height-48: 3rem;     /* 48 */
+  --line-height-56: 3.5rem;   /* 56 */
+  --line-height-72: 4.5rem;   /* 72 */
+  --line-height-88: 5.5rem;   /* 88 */
+
+  /* Letter Spacing */
+  --letter-spacing-tight:  -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide:   0.02em;
+
+  /* Semantic roles — the contract Figma text styles mirror */
+  --text-caption-size:    var(--font-size-12);
+  --text-caption-line:    var(--line-height-16);
+  --text-caption-weight:  var(--font-weight-regular);
+
+  --text-body-sm-size:    var(--font-size-14);
+  --text-body-sm-line:    var(--line-height-20);
+  --text-body-sm-weight:  var(--font-weight-regular);
+
+  --text-body-size:       var(--font-size-16);
+  --text-body-line:       var(--line-height-24);
+  --text-body-weight:     var(--font-weight-regular);
+
+  --text-body-lg-size:    var(--font-size-20);
+  --text-body-lg-line:    var(--line-height-28);
+  --text-body-lg-weight:  var(--font-weight-regular);
+
+  --text-heading-sm-size:    var(--font-size-24);
+  --text-heading-sm-line:    var(--line-height-32);
+  --text-heading-sm-weight:  var(--font-weight-semibold);
+  --text-heading-sm-tracking: var(--letter-spacing-normal);
+
+  --text-heading-md-size:    var(--font-size-32);
+  --text-heading-md-line:    var(--line-height-40);
+  --text-heading-md-weight:  var(--font-weight-bold);
+  --text-heading-md-tracking: var(--letter-spacing-tight);
+
+  --text-heading-lg-size:    var(--font-size-40);
+  --text-heading-lg-line:    var(--line-height-48);
+  --text-heading-lg-weight:  var(--font-weight-bold);
+  --text-heading-lg-tracking: var(--letter-spacing-tight);
+
+  --text-display-sm-size:    var(--font-size-48);
+  --text-display-sm-line:    var(--line-height-56);
+  --text-display-sm-weight:  var(--font-weight-bold);
+  --text-display-sm-tracking: var(--letter-spacing-tight);
+
+  --text-display-md-size:    var(--font-size-64);
+  --text-display-md-line:    var(--line-height-72);
+  --text-display-md-weight:  var(--font-weight-black);
+  --text-display-md-tracking: var(--letter-spacing-tight);
+
+  --text-display-lg-size:    var(--font-size-80);
+  --text-display-lg-line:    var(--line-height-88);
+  --text-display-lg-weight:  var(--font-weight-black);
+  --text-display-lg-tracking: var(--letter-spacing-tight);
 }
