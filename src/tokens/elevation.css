@@ -1,3 +1,13 @@
 :root {
-  /* Elevation/shadow tokens land here in Phase 5 */
+  /* Elevation Scale — drop shadows mirroring Figma effect styles `elevation/sm,md,lg`.
+     Stored as composed box-shadow values; shadows aren't easily decomposed into
+     primitives the way colors and spacing are, so each token is a complete shadow. */
+  --elevation-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --elevation-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --elevation-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+  /* Semantic roles — what components reach for */
+  --elevation-card:    var(--elevation-sm);
+  --elevation-popover: var(--elevation-md);
+  --elevation-modal:   var(--elevation-lg);
 }
