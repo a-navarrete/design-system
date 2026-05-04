@@ -11,8 +11,11 @@
   --color-primary-800: #0a0066;
   --color-primary-900: #050033;
 
-  /* Grey Scale (NBC) — mirrors Figma color/grey/0..1000 */
-  --color-grey-0: #ffffff;
+  /* Hard-stop primitives — kept out of the grey ramp on purpose */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Grey Scale (NBC) — mirrors Figma color/grey/100..1000 */
   --color-grey-100: #f4f5f6;
   --color-grey-200: #e6e7e8;
   --color-grey-300: #d6d7d8;
@@ -35,11 +38,11 @@
   --color-warning-700: #b45309;
 
   /* Surface / Backgrounds */
-  --color-surface: var(--color-grey-0);
+  --color-surface: var(--color-white);
   --color-background: var(--color-grey-100);
 
   /* Text */
   --color-text-primary: var(--color-grey-900);
   --color-text-secondary: var(--color-grey-600);
-  --color-text-inverse: var(--color-grey-0);
+  --color-text-inverse: var(--color-white);
 }
