@@ -20,7 +20,7 @@ The phased build plan. Status here is the source of truth for "what's next" — 
 | 1e | Color — text contrast matrix | ✅ done in Figma |  |
 | 2a | Typography — practical 4-point scale, code + Figma styles | 🟡 open | [#4](https://github.com/a-navarrete/design-system/pull/4) |
 | 2b | Typography — Foundations Type Scale visual reference | ✅ done in Figma |  |
-| 3 | Spacing — fill code tokens, build Foundations visual | ⏸ not started |  |
+| 3 | Spacing — pixel-numbered tokens, Foundations visual reference | 🟡 open | [#6](https://github.com/a-navarrete/design-system/pull/6) |
 | 4 | Radius — fill `radius.css`, build Foundations visual | ⏸ not started |  |
 | 5 | Elevation — fill `elevation.css`, document existing Figma effect styles | ⏸ not started |  |
 | 6 | Component rebuild (Button, Toggle, then expand) | ⏸ blocked on foundations |  |
