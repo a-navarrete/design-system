@@ -1,0 +1,35 @@
+name: Chromatic
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Chromatic needs full history to baseline against the previous commit on main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          # Auto-accept changes on main; PRs require manual review of any visual diffs
+          autoAcceptChanges: 'main'
+          # Don't fail the workflow on visual changes — let humans review in the Chromatic UI
+          exitOnceUploaded: true

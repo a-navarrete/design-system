@@ -28,3 +28,7 @@ dist-ssr
 
 *storybook.log
 storybook-static
+
+# Chromatic
+chromatic-diagnostics.json
+build-storybook.log

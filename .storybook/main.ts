@@ -13,7 +13,10 @@ const config: StorybookConfig = {
   ],
   "framework": "@storybook/react-vite",
   async viteFinal(config, { configType }) {
-    if (configType === 'PRODUCTION') {
+    // GitHub Pages serves at https://a-navarrete.github.io/design-system/, so the
+    // production build needs that base path. But Chromatic and other consumers
+    // serve at root, so only apply it when the deploy-storybook workflow opts in.
+    if (configType === 'PRODUCTION' && process.env.GITHUB_PAGES === 'true') {
       config.base = '/design-system/';
     }
     return config;
