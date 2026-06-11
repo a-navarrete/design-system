@@ -39,20 +39,20 @@ The phased build plan. Status here is the source of truth for "what's next" — 
 
 ### Sub-phases
 
-| # | Component | Variants in scope |
-|---|---|---|
-| 6.1 | **Strategy & template** | Component anatomy doc, Storybook story template, Code Connect template, Chromatic wired into CI |
-| 6.2 | Button | primary / secondary / ghost / destructive × default/hover/active/disabled × sm/md/lg |
-| 6.3 | Input | default / focus / error / disabled × ±label ±helper ±icon |
-| 6.4 | Checkbox | unchecked / checked / indeterminate × default/disabled |
-| 6.5 | Radio | unselected / selected × default/disabled |
-| 6.6 | Toggle | off / on × default/disabled |
-| 6.7 | Avatar | xs/sm/md/lg/xl × image/initials/placeholder |
-| 6.8 | Badge | neutral/info/positive/warning/danger × solid/subtle |
-| 6.9 | IconButton | default/hover/active/disabled × ghost/filled × sm/md/lg |
-| 6.10 | Card | container with optional header / body / footer |
-| 6.11 | Form Field | Label + Input + helper text + error state composition |
-| 6.12 | Banner / Alert | info/success/warning/danger × dismissible |
+| # | Component | Variants in scope | Status |
+|---|---|---|---|
+| 6.1 | **Strategy & template** | `docs/COMPONENT-TEMPLATE.md`, Chromatic CI, Button text styles | 🟡 in progress |
+| 6.2 | Button | primary / secondary / ghost / destructive × default/hover/active/disabled × sm/md/lg | ⏸ |
+| 6.3 | Input | default / focus / error / disabled × ±label ±helper ±icon | ⏸ |
+| 6.4 | Checkbox | unchecked / checked / indeterminate × default/disabled | ⏸ |
+| 6.5 | Radio | unselected / selected × default/disabled | ⏸ |
+| 6.6 | Toggle | off / on × default/disabled | ⏸ |
+| 6.7 | Avatar | xs/sm/md/lg/xl × image/initials/placeholder | ⏸ |
+| 6.8 | Badge | neutral/info/positive/warning/danger × solid/subtle | ⏸ |
+| 6.9 | IconButton | default/hover/active/disabled × ghost/filled × sm/md/lg | ⏸ |
+| 6.10 | Card | container with optional header / body / footer | ⏸ |
+| 6.11 | Form Field | Label + Input + helper text + error state composition | ⏸ |
+| 6.12 | Banner / Alert | info/success/warning/danger × dismissible | ⏸ |
 
 Atoms (6.2 – 6.9) can run in parallel branches once 6.1 lands. Card / Form Field / Banner depend on relevant atoms.
 

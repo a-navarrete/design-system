@@ -85,4 +85,17 @@
   --text-display-lg-line:    var(--line-height-88);
   --text-display-lg-weight:  var(--font-weight-black);
   --text-display-lg-tracking: var(--letter-spacing-tight);
+
+  /* Component roles — body sizes at semibold weight, used by interactive elements */
+  --text-button-sm-size:    var(--font-size-14);
+  --text-button-sm-line:    var(--line-height-20);
+  --text-button-sm-weight:  var(--font-weight-semibold);
+
+  --text-button-md-size:    var(--font-size-16);
+  --text-button-md-line:    var(--line-height-24);
+  --text-button-md-weight:  var(--font-weight-semibold);
+
+  --text-button-lg-size:    var(--font-size-20);
+  --text-button-lg-line:    var(--line-height-28);
+  --text-button-lg-weight:  var(--font-weight-semibold);
 }
