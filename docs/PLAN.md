@@ -41,8 +41,8 @@ The phased build plan. Status here is the source of truth for "what's next" — 
 
 | # | Component | Variants in scope | Status |
 |---|---|---|---|
-| 6.1 | **Strategy & template** | `docs/COMPONENT-TEMPLATE.md`, Chromatic CI, Button text styles | 🟡 in progress |
-| 6.2 | Button | primary / secondary / ghost / destructive × default/hover/active/disabled × sm/md/lg | ⏸ |
+| 6.1 | **Strategy & template** | `docs/COMPONENT-TEMPLATE.md`, Chromatic CI, Button text styles | ✅ merged ([#10](https://github.com/a-navarrete/design-system/pull/10)) |
+| 6.2 | Button | primary / secondary / ghost / destructive × default/hover/active/disabled × sm/md/lg | 🟡 in progress |
 | 6.3 | Input | default / focus / error / disabled × ±label ±helper ±icon | ⏸ |
 | 6.4 | Checkbox | unchecked / checked / indeterminate × default/disabled | ⏸ |
 | 6.5 | Radio | unselected / selected × default/disabled | ⏸ |
@@ -104,12 +104,12 @@ Phase 6.<N> — <Component>. Built fresh per docs/PLAN.md.
 - Figma file: https://www.figma.com/design/eWc98Xh9u5EOvbVd9c7JT3
 - Storybook: deployed via GitHub Actions on merges to `main`
 - Repo: https://github.com/a-navarrete/design-system
-- Chromatic: TBD — link goes here once 6.1 wires it up
+- Chromatic: https://www.chromatic.com/builds?appId=69f8c71fe9f3868fdb81902e
 
 ## Known gaps / follow-ups
 
 - **Foundations canvas text labels** (`grey1..grey10`) still use the old naming because Arthouse Owned isn't loadable from the plugin runtime. Cosmetic on the doc page only — variables and bindings are correct.
-- **No button-specific text style** yet (would be `Body/Default` at Semi Bold). Will be addressed in 6.1 (component template) since multiple components need it.
+- **Button text styles**: CSS tokens (`--text-button-{sm,md,lg}-*`) landed in 6.1 ([#10](https://github.com/a-navarrete/design-system/pull/10)); the matching Figma text styles (`Button/Sm|Md|Lg`) still need creating when Button is built in Figma (6.2).
 - **The 248 broken instance fills** from Phase 1c will all be replaced by Phase 6 — they don't need a separate fix.
 
 ## Updating this doc
