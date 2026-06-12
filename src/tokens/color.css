@@ -1,15 +1,15 @@
 :root {
-  /* Primary Scale - #1a00ff */
-  --color-primary-50: #f0f0ff;
-  --color-primary-100: #e0e0ff;
-  --color-primary-200: #c1c1ff;
-  --color-primary-300: #a1a1ff;
-  --color-primary-400: #6262ff;
-  --color-primary-500: #1a00ff; /* Brand Color */
-  --color-primary-600: #1500cc;
-  --color-primary-700: #0f0099;
-  --color-primary-800: #0a0066;
-  --color-primary-900: #050033;
+  /* Primary Scale — NBC blue, mirrors Figma blue/* (500 = accent/default) */
+  --color-primary-50: #f0f3fa;
+  --color-primary-100: #e1e8f6;
+  --color-primary-200: #c3d2ed;
+  --color-primary-300: #8eb0ea;
+  --color-primary-400: #598ee8;
+  --color-primary-500: #246be5; /* Brand Color */
+  --color-primary-600: #1c5ac6;
+  --color-primary-700: #144aa8;
+  --color-primary-800: #183b7f;
+  --color-primary-900: #1b2b56;
 
   /* Hard-stop primitives — kept out of the grey ramp on purpose */
   --color-white: #ffffff;
@@ -37,11 +37,12 @@
   --color-warning-500: #f59e0b;
   --color-warning-700: #b45309;
 
-  /* Semantic - Danger (600 included: destructive controls need a hover stop) */
-  --color-danger-50: #fef2f2;
-  --color-danger-500: #ef4444;
-  --color-danger-600: #dc2626;
-  --color-danger-700: #b91c1c;
+  /* Semantic - Danger — NBC red, mirrors Figma red/* (500 = brand/breaking).
+     600/700 included: destructive controls need hover/active stops. */
+  --color-danger-50: #fff1f1;
+  --color-danger-500: #ff1b1c;
+  --color-danger-600: #cc1616;
+  --color-danger-700: #991011;
 
   /* Surface / Backgrounds */
   --color-surface: var(--color-white);
