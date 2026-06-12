@@ -109,7 +109,8 @@ Phase 6.<N> — <Component>. Built fresh per docs/PLAN.md.
 ## Known gaps / follow-ups
 
 - **Foundations canvas text labels** (`grey1..grey10`) still use the old naming because Arthouse Owned isn't loadable from the plugin runtime. Cosmetic on the doc page only — variables and bindings are correct.
-- **Button text styles**: CSS tokens (`--text-button-{sm,md,lg}-*`) landed in 6.1 ([#10](https://github.com/a-navarrete/design-system/pull/10)); the matching Figma text styles (`Button/Sm|Md|Lg`) still need creating when Button is built in Figma (6.2).
+- ~~**Button text styles**~~ resolved in 6.2: CSS tokens landed in 6.1 ([#10](https://github.com/a-navarrete/design-system/pull/10)) and the Figma `Button/Small|Medium|Large` text styles already existed (built on Inter Semi Bold — see Arthouse Owned note above).
+- **Code primary/danger ramps realigned to the NBC palette** in 6.2 (blue 500 `#246be5`, red 500 `#ff1b1c`) — the old `#1a00ff` ramp was pre-NBC placeholder. Any surface still assuming the old blue should be caught by Chromatic diffs.
 - **The 248 broken instance fills** from Phase 1c will all be replaced by Phase 6 — they don't need a separate fix.
 
 ## Updating this doc
