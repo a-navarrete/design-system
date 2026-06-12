@@ -37,6 +37,12 @@
   --color-warning-500: #f59e0b;
   --color-warning-700: #b45309;
 
+  /* Semantic - Danger (600 included: destructive controls need a hover stop) */
+  --color-danger-50: #fef2f2;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+
   /* Surface / Backgrounds */
   --color-surface: var(--color-white);
   --color-background: var(--color-grey-100);
