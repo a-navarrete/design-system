@@ -3,37 +3,22 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
 <Meta title="Tokens/Colors" />
 
 # Colors
-This palette defines the color scale for our design system. These are available as CSS variables.
+
+The color system has **two layers**:
+
+1. **Primitives** — raw color ramps (`--color-{family}-{stop}`). Mirror Figma `color/{family}/{stop}` 1:1. Don't consume these directly in components.
+2. **Semantic tokens** — role tokens (`--surface-*`, `--text-*`, `--border-*`, `--action-*`, `--status-*`) that bind to primitives. **Components consume these.** Light mode is the default; dark mode is the same token names remapped under `[data-theme="dark"]`, so component CSS never changes between themes.
+
+Source of truth: `src/tokens/color.css`. The hexes below are the resolved values.
+
+## Primitives
 
 <ColorPalette>
   <ColorItem
-    title="Primary"
-    subtitle="Main brand color scale"
-    colors={{
-      50: '#f0f0ff',
-      100: '#e0e0ff',
-      200: '#c1c1ff',
-      300: '#a1a1ff',
-      400: '#6262ff',
-      500: '#1a00ff',
-      600: '#1500cc',
-      700: '#0f0099',
-      800: '#0a0066',
-      900: '#050033',
-    }}
-  />
-  <ColorItem
-    title="Primitives"
-    subtitle="Hard-stop colors — independent of the grey ramp"
+    title="Grey"
+    subtitle="NBC greyscale ramp — mirrors Figma color/grey/100..1000"
     colors={{
       white: '#ffffff',
-      black: '#000000',
-    }}
-  />
-  <ColorItem
-    title="Grey"
-    subtitle="NBC grayscale ramp — mirrors Figma color/grey/100..1000"
-    colors={{
       100: '#f4f5f6',
       200: '#e6e7e8',
       300: '#d6d7d8',
@@ -44,33 +29,182 @@ This palette defines the color scale for our design system. These are available 
       800: '#24282d',
       900: '#181a1e',
       1000: '#090a0b',
+      black: '#000000',
     }}
   />
   <ColorItem
-    title="Success"
-    subtitle="Positive semantic states"
+    title="Blue"
+    subtitle="Brand / primary-action family — blue/300 is the brand"
     colors={{
-      50: '#f0fdf4',
-      500: '#22c55e',
-      700: '#15803d',
+      50: '#c3d2ed',
+      100: '#8ba7d8',
+      200: '#4e77bd',
+      300: '#144aa8',
+      400: '#133484',
+      500: '#0d2058',
+      600: '#041024',
     }}
   />
   <ColorItem
-    title="Warning"
-    subtitle="Alert semantic states"
+    title="Orange"
+    subtitle="Accent"
     colors={{
-      50: '#fffbeb',
-      500: '#f59e0b',
-      700: '#b45309',
+      50: '#fbd3c2',
+      100: '#f9aa81',
+      200: '#f57f36',
+      300: '#f54e00',
+      400: '#b53a00',
+      500: '#7b2400',
+      600: '#521a00',
     }}
   />
   <ColorItem
-    title="Error"
-    subtitle="Danger semantic states"
+    title="Red"
+    subtitle="Danger / error"
     colors={{
-      50: '#fef2f2',
-      500: '#ef4444',
-      700: '#b91c1c',
+      50: '#ffc7c9',
+      100: '#ff9291',
+      200: '#ff5753',
+      300: '#ff1b1c',
+      400: '#bd0e00',
+      500: '#800a01',
+      600: '#520000',
+    }}
+  />
+  <ColorItem
+    title="Green"
+    subtitle="Success (teal)"
+    colors={{
+      50: '#a4e5df',
+      100: '#96d3ca',
+      200: '#62beae',
+      300: '#2ca58d',
+      400: '#1d806e',
+      500: '#155647',
+      600: '#114037',
+    }}
+  />
+  <ColorItem
+    title="Yellow"
+    subtitle="Warning"
+    colors={{
+      50: '#ffedd1',
+      100: '#ffdca4',
+      200: '#ffcb76',
+      300: '#ffba49',
+      400: '#bd912a',
+      500: '#80611a',
+      600: '#663f00',
+    }}
+  />
+</ColorPalette>
+
+## Semantic tokens — Light
+
+The default theme (`:root`). Swatches show the resolved value; consume via the CSS variable in the title.
+
+<ColorPalette>
+  <ColorItem
+    title="--surface-*"
+    subtitle="canvas · raised · sunken · accent"
+    colors={{
+      canvas: '#ffffff',
+      raised: '#ffffff',
+      sunken: '#f4f5f6',
+      accent: '#f54e00',
+    }}
+  />
+  <ColorItem
+    title="--text-*"
+    subtitle="primary · secondary · muted · on-accent"
+    colors={{
+      primary: '#181a1e',
+      secondary: '#31363d',
+      muted: '#64686d',
+      'on-accent': '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="--border-*"
+    subtitle="default · subtle · strong"
+    colors={{
+      default: '#d6d7d8',
+      subtle: '#e6e7e8',
+      strong: '#b6b7b8',
+    }}
+  />
+  <ColorItem
+    title="--action-*"
+    subtitle="primary · primary-hover · danger"
+    colors={{
+      primary: '#144aa8',
+      'primary-hover': '#0d2058',
+      danger: '#ff1b1c',
+    }}
+  />
+  <ColorItem
+    title="--status-*"
+    subtitle="success · warning · error · info"
+    colors={{
+      success: '#2ca58d',
+      warning: '#ffba49',
+      error: '#ff1b1c',
+      info: '#4e77bd',
+    }}
+  />
+</ColorPalette>
+
+## Semantic tokens — Dark
+
+Same token names under `[data-theme="dark"]` — only the bindings change.
+
+<ColorPalette>
+  <ColorItem
+    title="--surface-* (dark)"
+    subtitle="canvas · raised · sunken · accent"
+    colors={{
+      canvas: '#181a1e',
+      raised: '#24282d',
+      sunken: '#090a0b',
+      accent: '#f54e00',
+    }}
+  />
+  <ColorItem
+    title="--text-* (dark)"
+    subtitle="primary · secondary · muted · on-accent"
+    colors={{
+      primary: '#ffffff',
+      secondary: '#d6d7d8',
+      muted: '#b6b7b8',
+      'on-accent': '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="--border-* (dark)"
+    subtitle="default · subtle · strong"
+    colors={{
+      default: '#31363d',
+      subtle: '#24282d',
+      strong: '#64686d',
+    }}
+  />
+  <ColorItem
+    title="--action-* (dark)"
+    subtitle="primary · primary-hover · danger"
+    colors={{
+      primary: '#144aa8',
+      'primary-hover': '#8ba7d8',
+      danger: '#ff5753',
+    }}
+  />
+  <ColorItem
+    title="--status-* (dark)"
+    subtitle="success · warning · error · info"
+    colors={{
+      success: '#62beae',
+      warning: '#ffcb76',
+      error: '#ff5753',
+      info: '#4e77bd',
     }}
   />
 </ColorPalette>
