@@ -1,21 +1,16 @@
-:root {
-  /* Primary Scale - #1a00ff */
-  --color-primary-50: #f0f0ff;
-  --color-primary-100: #e0e0ff;
-  --color-primary-200: #c1c1ff;
-  --color-primary-300: #a1a1ff;
-  --color-primary-400: #6262ff;
-  --color-primary-500: #1a00ff; /* Brand Color */
-  --color-primary-600: #1500cc;
-  --color-primary-700: #0f0099;
-  --color-primary-800: #0a0066;
-  --color-primary-900: #050033;
+/* ============================================================================
+   COLOR TOKENS
+   Two layers:
+   1. Primitives — raw color ramps. Mirror Figma `color/{family}/{stop}` 1:1.
+   2. Semantic  — role tokens (surface/text/border/action/status) that bind to
+      primitives. Light mode in :root; dark mode under [data-theme="dark"].
+   Components consume the SEMANTIC layer, never raw primitives.
+   ============================================================================ */
 
-  /* Hard-stop primitives — kept out of the grey ramp on purpose */
+:root {
+  /* --- Primitives: Greyscale (NBC) — mirrors Figma color/grey/100..1000 --- */
   --color-white: #ffffff;
   --color-black: #000000;
-
-  /* Grey Scale (NBC) — mirrors Figma color/grey/100..1000 */
   --color-grey-100: #f4f5f6;
   --color-grey-200: #e6e7e8;
   --color-grey-300: #d6d7d8;
@@ -27,22 +22,111 @@
   --color-grey-900: #181a1e;
   --color-grey-1000: #090a0b;
 
-  /* Semantic - Success */
-  --color-success-50: #f0fdf4;
-  --color-success-500: #22c55e;
-  --color-success-700: #15803d;
+  /* --- Primitives: Blue — brand / primary action family. blue/300 is the brand. --- */
+  --color-blue-50:  #c3d2ed;
+  --color-blue-100: #8ba7d8;
+  --color-blue-200: #4e77bd;
+  --color-blue-300: #144aa8; /* Brand */
+  --color-blue-400: #133484;
+  --color-blue-500: #0d2058;
+  --color-blue-600: #041024;
 
-  /* Semantic - Warning */
-  --color-warning-50: #fffbeb;
-  --color-warning-500: #f59e0b;
-  --color-warning-700: #b45309;
+  /* --- Primitives: Orange — accent --- */
+  --color-orange-50:  #fbd3c2;
+  --color-orange-100: #f9aa81;
+  --color-orange-200: #f57f36;
+  --color-orange-300: #f54e00;
+  --color-orange-400: #b53a00;
+  --color-orange-500: #7b2400;
+  --color-orange-600: #521a00;
 
-  /* Surface / Backgrounds */
-  --color-surface: var(--color-white);
-  --color-background: var(--color-grey-100);
+  /* --- Primitives: Red — danger / error --- */
+  --color-red-50:  #ffc7c9;
+  --color-red-100: #ff9291;
+  --color-red-200: #ff5753;
+  --color-red-300: #ff1b1c;
+  --color-red-400: #bd0e00;
+  --color-red-500: #800a01;
+  --color-red-600: #520000;
+
+  /* --- Primitives: Green (teal) — success --- */
+  --color-green-50:  #a4e5df;
+  --color-green-100: #96d3ca;
+  --color-green-200: #62beae;
+  --color-green-300: #2ca58d;
+  --color-green-400: #1d806e;
+  --color-green-500: #155647;
+  --color-green-600: #114037;
+
+  /* --- Primitives: Yellow — warning --- */
+  --color-yellow-50:  #ffedd1;
+  --color-yellow-100: #ffdca4;
+  --color-yellow-200: #ffcb76;
+  --color-yellow-300: #ffba49;
+  --color-yellow-400: #bd912a;
+  --color-yellow-500: #80611a;
+  --color-yellow-600: #663f00;
+
+  /* ===== Semantic — Light mode ===== */
+
+  /* Surface */
+  --surface-canvas: var(--color-white);
+  --surface-raised: var(--color-white);
+  --surface-sunken: var(--color-grey-100);
+  --surface-accent: var(--color-orange-300);
 
   /* Text */
-  --color-text-primary: var(--color-grey-900);
-  --color-text-secondary: var(--color-grey-600);
-  --color-text-inverse: var(--color-white);
+  --text-primary:   var(--color-grey-900);
+  --text-secondary: var(--color-grey-700);
+  --text-muted:     var(--color-grey-600);
+  --text-on-accent: var(--color-white);
+
+  /* Border */
+  --border-default: var(--color-grey-300);
+  --border-subtle:  var(--color-grey-200);
+  --border-strong:  var(--color-grey-400);
+
+  /* Action */
+  --action-primary:       var(--color-blue-300);
+  --action-primary-hover: var(--color-blue-500);
+  --action-danger:        var(--color-red-300);
+
+  /* Status */
+  --status-success: var(--color-green-300);
+  --status-warning: var(--color-yellow-300);
+  --status-error:   var(--color-red-300);
+  --status-info:    var(--color-blue-200);
+}
+
+/* ===== Semantic — Dark mode ===== */
+/* Same token names, remapped primitives. Toggle with `data-theme="dark"` on a
+   root element. Only the bindings change — component CSS stays identical. */
+[data-theme="dark"] {
+  /* Surface */
+  --surface-canvas: var(--color-grey-900);
+  --surface-raised: var(--color-grey-800);
+  --surface-sunken: var(--color-grey-1000);
+  --surface-accent: var(--color-orange-300);
+
+  /* Text */
+  --text-primary:   var(--color-white);
+  --text-secondary: var(--color-grey-300);
+  --text-muted:     var(--color-grey-400);
+  --text-on-accent: var(--color-white);
+
+  /* Border */
+  --border-default: var(--color-grey-700);
+  --border-subtle:  var(--color-grey-800);
+  --border-strong:  var(--color-grey-600);
+
+  /* Action — primary stays blue/300; hover lightens instead of darkens */
+  --action-primary:       var(--color-blue-300);
+  --action-primary-hover: var(--color-blue-100);
+  --action-danger:        var(--color-red-200);
+
+  /* Status — softer 200 stops read better on dark surfaces */
+  --status-success: var(--color-green-200);
+  --status-warning: var(--color-yellow-200);
+  --status-error:   var(--color-red-200);
+  --status-info:    var(--color-blue-200);
 }

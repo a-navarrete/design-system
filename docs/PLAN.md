@@ -5,7 +5,7 @@ The phased build plan. Status here is the source of truth for "what's next" — 
 ## Architecture
 
 - **Code:** tokens in `src/tokens/` (one file per category), components in `src/components/<Name>/<Name>.tsx` (folder-per-component), Storybook docs in `src/stories/`.
-- **Figma:** file `eWc98Xh9u5EOvbVd9c7JT3` ("NBC"). The Foundations page is the doc hub — every foundation gets a section here mirroring its code counterpart. Components live on their own pages (Atoms / Molecules / Organisms / Templates).
+- **Figma:** canonical file is `eWc98Xh9u5EOvbVd9c7JT3` ("NBC"). The Foundations page is the doc hub — every foundation gets a section here mirroring its code counterpart. Components live on their own pages (Atoms / Molecules / Organisms / Templates). See **Figma source-of-truth & token reconciliation** below — there are two other files in play and an in-flight hybrid merge.
 - **Bridge:** Figma variables ↔ CSS custom properties (1:1 by name). Figma text styles ↔ semantic CSS roles. Figma effect styles ↔ elevation tokens. Figma components ↔ React components via Code Connect (`.figma.tsx` mapping files).
 
 ## Phase status
@@ -25,7 +25,7 @@ The phased build plan. Status here is the source of truth for "what's next" — 
 | 5 | Elevation — composed shadow tokens, Foundations visual reference | ✅ merged | [#8](https://github.com/a-navarrete/design-system/pull/8) |
 | 6 | Component rebuild (atoms + key molecules) | 🟡 in progress | see Phase 6 sub-plan below |
 
-**Foundations are done.** Phase 6 is the next big push.
+**Foundations were "done" against the code, but a richer system surfaced in the App-Redesign Figma file — see the reconciliation section below.** The code-side color reconciliation has now landed; the Figma-side variable build and component work continue in Phase 6.
 
 ## Phase 6 — Component Rebuild
 
@@ -55,6 +55,42 @@ The phased build plan. Status here is the source of truth for "what's next" — 
 | 6.12 | Banner / Alert | info/success/warning/danger × dismissible | ⏸ |
 
 Atoms (6.2 – 6.9) can run in parallel branches once 6.1 lands. Card / Form Field / Banner depend on relevant atoms.
+
+> **Demo scaffolding:** the leftover flat `src/components/{Button,Toggle}.{tsx,css,figma.tsx}` + their `src/stories/` stories are throwaway Storybook *demo* builds (their `.figma.tsx` point at the throwaway `iJ8gvICLXnbsh9ple9rogK` demo file). They get removed as each real component lands — Button in 6.2, Toggle in 6.6 — not in this foundation PR.
+
+## Figma source-of-truth & token reconciliation
+
+**Three Figma files exist; here's the verdict (verified via `get_design_context` value diff against the code tokens, 2026-06-08):**
+
+| File key | Name | Holds | Disposition |
+|---|---|---|---|
+| `eWc98Xh9u5EOvbVd9c7JT3` | **NBC** | Foundations doc that mirrors code/Storybook 1:1. No components. | ✅ **canonical** |
+| `s5T2zhbu85Y09tu7BSHDgQ` | **App-Redesign** | Richer system: full semantic tokens (surface/text/border/action/status, light+dark), a real 27-variant **Button**, a 23-icon media library. Foundations diverge from code. | 🔵 **harvest into NBC** |
+| `iJ8gvICLXnbsh9ple9rogK` | Design-Systems | Storybook demo Button + Toggle only. | 🗑 **abandon / delete refs** |
+
+**Decision (2026-06-08): hybrid merge, single source of truth = NBC.** Keep what already matches code, adopt App-Redesign's richer layers, reconcile the primitive conflicts deliberately. **App-Redesign is a one-time migration source only** — once its semantic layer, dark mode, Button, and icons are pulled into NBC, it is abandoned. Going forward there is exactly ONE Figma file (NBC) + the code; no ongoing two-file workflow.
+
+| Foundation | Action | Notes |
+|---|---|---|
+| Greyscale | **keep** (code) | Exact match. App-Redesign names the darkest step `950`; NBC/code call it `1000` — align naming. |
+| Spacing | **keep + extend** | Keep `0,2…64`; optionally add App-Redesign's `80,96,128` (additive, no conflict). |
+| Radius | **keep** (code) | Keep all incl. `xs` (2px) — App-Redesign just omits it. |
+| Semantic token layer | **adopt** (App-Redesign) | Bring in surface / text / border / action / status architecture. Code only has flat primitives today. |
+| Status colors | **adopt** (App-Redesign) | `info` / `danger` are net-new (code lacks them → unblocks Badge). `success`/`warning`: take App-Redesign hues (`#2ca58d` teal / `#ffba49`) for palette coherence with the adopted status family. |
+| Dark mode | **adopt** (App-Redesign) | Net-new; code has no dark theme. |
+| Components (Button, icons) | **build fresh on NBC tokens** | Re-token onto NBC values rather than copy. Icons are mostly geometry (portable); Button binds to the new `--action-*` tokens / brand blue. |
+| **Brand / action blue** | ✅ **`#144aa8`** (App-Redesign) | Decided 2026-06-08. Keeps the adopted Button + semantic system coherent. Hover `#0d2058`. Replaces code's `#1a00ff`. |
+| **Type scale** | ✅ **keep code** (4-point) | Decided 2026-06-08. `12,14,16,20,24,32,40,48,64,80` stays — shipped, deliberate (PR #4). |
+| **Shadows** | ✅ **keep code** (single-layer) | Decided 2026-06-08. `sm/md/lg` stays as-is (PR #8). No xl/2xl. |
+
+### Migration worklist
+
+- [x] **`src/tokens/color.css` rewritten** — two layers: primitives (grey kept + blue/orange/red/green/yellow ramps from App-Redesign) and a semantic layer (surface/text/border/action/status) in light + dark (`[data-theme="dark"]`). Brand = `--color-blue-300` `#144aa8`. Type/spacing/radius/elevation tokens unchanged.
+- [x] **`Colors.mdx` updated** — renders the 7 primitive ramps + semantic tokens (light/dark). Swatches are static hexes copied from `color.css` (not live-read), so re-sync on future token changes.
+- [ ] **(NEXT) Build NBC Figma color variables** mirroring `color.css` 1:1 — primitives `color/{family}/{stop}` + semantics (`surface/*`, `text/*`, `border/*`, `action/*`, `status/*`) with Light + Dark modes. This is the foundation everything binds to.
+- [ ] **Build Button fresh in NBC** on the new `--action-*` tokens — build from scratch, NOT migrate the App-Redesign Button (this is the Phase 6.2 work). React `Button` consumes the semantic tokens.
+- [ ] App-Redesign **icon library** (23 icons) — TBD whether to migrate or rebuild; revisit after Button.
+- [ ] Once the above land, **abandon/archive the App-Redesign + Design-Systems files.**
 
 ### Per-component definition of done
 
@@ -101,10 +137,12 @@ Phase 6.<N> — <Component>. Built fresh per docs/PLAN.md.
 
 ## Reference
 
-- Figma file: https://www.figma.com/design/eWc98Xh9u5EOvbVd9c7JT3
+- Figma — canonical (NBC): https://www.figma.com/design/eWc98Xh9u5EOvbVd9c7JT3
+- Figma — App-Redesign (harvest source): https://www.figma.com/design/s5T2zhbu85Y09tu7BSHDgQ/App-Redesign?node-id=0-292
+- Figma — Design-Systems (abandoned demo): https://www.figma.com/design/iJ8gvICLXnbsh9ple9rogK
 - Storybook: deployed via GitHub Actions on merges to `main`
 - Repo: https://github.com/a-navarrete/design-system
-- Chromatic: https://www.chromatic.com/builds?appId=69f8c71fe9f3868fdb81902e
+- Chromatic: https://www.chromatic.com/builds?appId=69f8c71fe9f3868fdb81902e — ⚠️ the project token is hardcoded in `package.json`; rotate it and move to `CHROMATIC_PROJECT_TOKEN` (the workflow already reads from secrets).
 
 ## Known gaps / follow-ups
 

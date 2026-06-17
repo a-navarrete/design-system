@@ -32,3 +32,6 @@ storybook-static
 # Chromatic
 chromatic-diagnostics.json
 build-storybook.log
+
+# Claude Code ephemeral worktrees
+.claude/worktrees/
