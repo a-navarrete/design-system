@@ -9,7 +9,7 @@ of truth and keep it current as work lands.
 - **Tokens:** `src/tokens/` — one CSS file per category (`color`, `typography`,
   `spacing`, `radius`, `elevation`), exposed as CSS custom properties.
 - **Components:** folder-per-component — `src/components/<Name>/{<Name>.tsx,
-  <Name>.css, <Name>.stories.tsx, <Name>.figma.tsx}`. (Some legacy demo files are
+<Name>.css, <Name>.stories.tsx, <Name>.figma.tsx}`. (Some legacy demo files are
   still flat under `src/components/`; they're throwaway scaffolding.)
 - **Docs:** Storybook MDX in `src/stories/`.
 - **Bridge:** Figma variables ↔ CSS custom properties (1:1 by name); Figma
@@ -32,7 +32,19 @@ npm run build-storybook   # catches MDX/story indexing errors; what Chromatic sn
   regression is handled by Chromatic in CI.
 - Watch mode while iterating on tests: `npm run test:watch`.
 
+### Pre-commit hook (fast convenience layer)
+
+A Husky pre-commit hook runs **lint-staged** on staged files only: ESLint
+(`--fix`) on `.ts/.tsx` and Prettier (`--write`) on matching files. It's for
+fast feedback and auto-formatting — **not** a full gate. It deliberately does
+**not** run typecheck or the browser tests (whole-project checks that don't
+scope to staged files); those run in CI (`.github/workflows/ci.yml`).
+
+The hook is bypassable with `git commit --no-verify`, so **CI remains the real
+gate.** It runs automatically after `npm install` (via the `prepare` script).
+
 Rules:
+
 1. Run `lint` + `typecheck` after any logic/component change; `build-storybook`
    after touching `.mdx` / `.stories.*` files.
 2. Never assume a change is correct based only on dev-server hot reload.
