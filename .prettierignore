@@ -1,0 +1,6 @@
+# Generated / vendored — don't format
+dist
+storybook-static
+node_modules
+package-lock.json
+.claude
